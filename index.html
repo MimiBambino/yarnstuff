@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/jquery.js"></script>
+    <script src='js/helper.js'></script>
+    <script src='js/resumeBuilder.js'></script>
+    <!--Google font for my name, footer and standard text-->
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400|Parisienne|Montez|Poly' rel='stylesheet' type='text/css'>
+    <link rel='stylesheet' href='css/style.css' type='text/css'></link>
+    <link rel='shortcut icon' href='images/favicon.ico'/>
+    <title>Resume - Cynthia O'Donnell</title>
+  </head>
+    <body>
+<!--HEADER-->
+      <header class='text-center'>
+      </header>
+<!--Home view-->
+      <div class='main text-center'>
+        <ul class='svg'>
+        </ul>
+      </div>
+<!--Yarns view-->
+      <div class='container'>
+        <div class='row'>
+          <h2 class='section-heading text-center'>Yarns</h2>
+          <div class='col-md-10 col-xs-12 text-center'>
+            <div class='yarns row'>
+            </div>
+          </div>
+          <div class='col-md-2 hidden-xs'>
+            <aside class='some-aside-content analgous-color text-left'>
+              <p>This area will be used for more information about Yarn Sherpa</p>
+                <p>Perhaps recommendations on the most popular yarns.</p>
+                <p>More recommendations based on what user has clicked on</p>
+                <p>If the user click a lot and never buys, then some ads will start appearing.  Maybe after 10 clicks, one ad will appear and then one more for each click.</p>
+                <p>Eventually, some promoted yarns will be mixed in with the regular yarns from the search.
+            </aside>
+          </div>
+        </div>
+      </div>
+<!--About Yarn Sherpa view-->
+      <div id='about' class='container'>
+        <div class='about-row row text-center'>
+          <div class='blog-container analgous-color col-md-12'>
+            <h2 class='section-heading text-center'>About Yarn Sherpa</h2>
+            <div class='row'>
+              <div class='blog-col-even col-md-6'>
+              </div>
+              <div class='blog-col-odd col-md-6'>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+<!--FOOTER-->
+    <div class='container'>
+      <footer class='row text-center'>
+        <div class='col-md-12 text-center'>
+          <p><button type='button' class='btn img-rounded show-all'>Show All Yarns</button></p>
+          <p>Made with <span id='javascript'>JavaScript</span>.  Code available at <span><a target='_blank' href='https://github.com/MimiBambino/InteractiveResume'><img src='images/GitHub.png' class='icon icon-github' alt='GitHub'></a></span> 
+          </p>
+          <p>&copy; Cynthia O'Donnell 2014</p>
+        </div>
+      </footer>
+    </div>
+    <script src='js/resumeBuilder.js'></script>
+  </body>
+</html>
