@@ -20,11 +20,11 @@ var SVG = {
 		"orange": {
 			"text": "Orange"
 		},
-		"pink": {
-			"text": "Pink"
-		},
 		"red": {
 			"text": "Red"
+		},
+		"pink": {
+			"text": "Pink"
 		},
 		"fuschia": {
 			"text": "Fuschia"
@@ -37,7 +37,6 @@ var SVG = {
 		// function takes one of the resume sections as the title parameter
 		for (var i in SVG.circle){
 			var svg = SVG.circle[i];
-			console.log(svg.text);
 			// set caption to the appropriate property of SVG class 
 			// insert appropriate SVG properties into the HTML helper
 			var SVGstring = SVGcircleHelper + SVGtext;
@@ -3503,20 +3502,13 @@ full_width: 640
 function printPictures(arr){
 	for (var i in arr){
 		var item = arr[i];
-		//console.log(arr.length); // 25
 		var href = item['url'];
 		var alt = item['title'];
-		var itemHTML = "<div class='item col-md-4 text-center'><a href='%href%'><img class='img-responsive' src='%src%' alt='%alt%'></a></div>";
+		var itemHTML = "<div class='item col-md-4 text-center'><a href='%href%' target='_blank'><img class='img-responsive' src='%src%' alt='%alt%'></a></div>";
 		if (item.Images !== undefined){
-			for (var j in item.Images) {
-				console.log(item.Images.length);
-				var src = item.Images[0].url_170x135;
-				var formattedItem = itemHTML.replace("%href%", href).replace("%src%", src).replace("%alt%", alt);
-				$(".yarns").append(formattedItem); 
-			}
-		} else {
-			var count = 1;
-			console.log(count);
+			var src = item.Images[0].url_170x135;
+			var formattedItem = itemHTML.replace("%href%", href).replace("%src%", src).replace("%alt%", alt);
+			$(".yarns").append(formattedItem); 
 		}
 	}
 }
