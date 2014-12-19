@@ -1,3 +1,10 @@
+// The id must be in the svg and not the circle in order for CSS to supply the fill property correctly
+var SVGcircleHelper = "<li class='%class%'><svg id='%id%' class='%color%' width='150' height='150'><circle cx='75' cy='75' r='75'/>";
+var SVGtext = "<text text-anchor='middle' alignment-baseline='middle' width='150' height='75' x='50%' y='50%'>%text%</text>";
+
+var SVGend = "</svg></li>";
+
+
 var SVG = {
 	// Figure out how to center the text on the circle programatically.
 	"circle": {
@@ -73,108 +80,11 @@ var SVG = {
 			$('button').html("Home").removeClass('show-all').addClass('home');
 			$('#about').hide();
 		});
-		$("#projects-circle").on("click", function(){
-			$(".main").hide();
-			$('button').html("Home").removeClass('show-all').addClass('home');
-			$('#projects').show();
-			$('#about').hide();
-		});
-		$("#skills-circle").on("click", function(){
-			$(".main").hide();
-			$('button').html("Home").removeClass('show-all').addClass('home');
-			$('#about').hide();
-		});
-		$("#about-circle").on("click", function(){
-			$(".main").hide();
-			$('button').html("Home").removeClass('show-all').addClass('home');
-			$('#skills').hide();
-		});
 	}
 };
 
-var bio = {
-	"name": "Yarn Sherpa",
-	"role": "The best yarns from around the internet",
-	"contacts": {
-		"website" : "www.mimibambino.com", 
-		"email" : "mimibambino@gmail.com",
-		"twitter" : "@mimibambino",
-		"github" : "MimiBambino",
-		"linkedin" : "Cynthia O'Donnell",
-		"location" : "Naples, Italy"
-	},
-	"skills": ["css", "html5", "node", "javascript", "business law", "management", "paper airplanes", "conversational german"], 
-	"image": "images/Cynthia.png",
-	"blog": [
-	{	
-		"title": "Why Web Development?",
-		"text":  "Why would an former-lawyer, former-naval officer become a Front End Web Developer?  Well, I've pretty much loved the internet since I first experienced it in the 90s. It felt like I suddenly had access to all of the information I could have ever wanted.  Twenty years later, it's even more true. However, I have been growing increasingly critical about how that information is organized.  I started learning about computer programming and web development because I wanted to help make the information already available online more useful by building web applications that find and display data in a more user-friendly way."
-	},
-	{
-		"title": "What is Yarn Sherpa?",
-		"text": "Yarn Sherpa is an easy way to search and shop for the best yarns available online.  It was created by two avid yarn crafters and web developers who were frustrated by the difficulty of finding great yarns at a fair price.  Yarn Sherpa makes it easy to search for yarns by color, weight and fiber content.  We are always adding more functionality so check back frequently as we make it easier and more fun to find the perfect yarn for your next project!"
-	}
-	],
-	"aboutDeveloper": "Why would a former-lawyer, former-naval officer become a Front End Web Developer?  Well, I've pretty much loved the internet since I first experienced it in the 90s. It felt like I suddenly had access to all of the information I could have ever wanted.  Twenty years later, it's even more true. However, I have been growing increasingly critical about how that information is organized.  I started learning about computer programming and web development because I wanted to help make the information already available online more useful by building web applications that find and display data in a more user-friendly way.",
-	"aboutMimi": "Why MimiBambino? It makes me smile. When my son was a baby, he called me Mimi. So for a few years, I <em>was</em> Mimi. He was the <em>bambino</em>. Now no one calls me Mimi and he is no longer a baby. To my delight, when I started creating handles and user accounts, I found that MimiBambino was always available. MimiBambino reminds me of that sweet, tender time when for most of the day it was just me and my baby.",
-	"displayBlog": function(){
-		for (var i in bio.blog) {
-			var selector = bio.blog[i];
-			if (i % 2 === 0) {
-				var blogPost = blogPostEven.replace('%title%', selector.title).replace('%index%', i).replace('%data%', selector.text);
-				$(".blog-col-even").append(blogPost);
-			}
-			if (i % 2 === 1) {
-				var blogPost = blogPostOdd.replace('%title%', selector.title).replace('%index%', i).replace('%data%', selector.text);
-				$(".blog-col-odd").append(blogPost);
-			}
-		}
-	},
-	displayHeader: function(){
-		var formattedName = headerName.replace("%data%", bio.name);
-		var formattedRole = headerRole.replace("%data%", bio.role);
-		$("header").prepend(formattedRole);
-		$("header").prepend(formattedName);
-		var formattedContactBar = headerContacts.replace("%website%", bio.contacts["website"]).replace("%email%", bio.contacts["email"]).replace("%github%", bio.contacts["github"]);
-		$("header").append(formattedContactBar);
-	},
-	displayContacts: function(){
-		var formattedWebsite = contactWebsite.replace("%data%", bio.contacts["website"]).replace("%data%", bio.contacts["website"]);
-		$(".contact-list").append(formattedWebsite);
-		var formattedEmail = contactEmail.replace("%data%", bio.contacts["email"]).replace("%data%", bio.contacts["email"]);
-		$(".contact-list").append(formattedEmail);
-		var formattedTwitter = contactTwitter.replace("%data%", bio.contacts["twitter"]);
-		$(".contact-list").append(formattedTwitter);
-		var formattedGithub = contactGithub.replace("%data%", bio.contacts["github"]).replace("%data%", bio.contacts["github"]);
-		$(".contact-list").append(formattedGithub);
-		var formattedLinkedIn = contactLinkedIn.replace("%data%", bio.contacts["linkedin"]);
-		$(".contact-list").append(formattedLinkedIn);
-		var formattedLocation = contactLocation.replace("%data%", bio.contacts["location"]);
-		$(".contact-list").append(formattedLocation);
-		$("#contacts").hide();
-	},
-	displaySkills: function(){
-		var formattedPic = HTMLbioPic.replace("%data%", bio.image);
-		$(".biopic").append(formattedPic);
-		for (var skill in bio.skills) {
-			var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
-			$(".skill-list").append(formattedSkill);
-		}
-		$("#skills").hide();
-	},
-	displayAbout: function(){
-		$('.developer').append(bio.aboutDeveloper);
-		$('.mimibambino').append(bio.aboutMimi);
-		$('#about').hide();
-		$('#mapDiv').hide();
-	}
-};
-
-bio.displayBlog();
-bio.displayHeader();
 SVG.display();
 SVG.click();
-bio.displayAbout();
 
 $("button").on("click", function() {
 	if ($("button").hasClass('home')) {
@@ -3629,5 +3539,3 @@ function printPictures(arr){
 }
 
 printPictures(resultList);
-
-
