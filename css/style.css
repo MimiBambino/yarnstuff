@@ -20,12 +20,14 @@ body {
 
 .byline {
 	line-height: 0.2;
-	color: #ccffff;
 	font-size: 1.2em;
 	letter-spacing: 1px;
 	padding-bottom: 40px;
 }
 
+.lightBlue {
+	color: #ccffff;
+}
 
 h2 {
 	font-size: 2.2em;
@@ -45,10 +47,9 @@ text {
 	fill: white;
 }
 
-/*.container {
-	padding-left:30px;
-	padding-right:30px;
-}*/
+aside p {
+	padding: 15px;
+}
 
 .heading {
 	color: white;
