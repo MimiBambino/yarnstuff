@@ -1,70 +1,47 @@
 // The id must be in the svg and not the circle in order for CSS to supply the fill property correctly
-var SVGcircleHelper = "<li class='%class%'><svg id='%id%' class='%color%' width='150' height='150'><circle cx='75' cy='75' r='75'/>";
-var SVGtext = "<text text-anchor='middle' alignment-baseline='middle' width='150' height='75' x='50%' y='50%'>%text%</text>";
-
-var SVGend = "</svg></li>";
-
-
 var SVG = {
 	// Figure out how to center the text on the circle programatically.
 	"circle": {
 		"blue": {
-			"text": "Blue",
-			"color": ""
+			"text": "Blue"
 		},
-		"blue-green": {
-			"text": "Blue-Green",
-			"color": ""
+		"turquoise": {
+			"text": "Turquoise"
 		},
-		"Green": {
-			"text": "Green",
-			"color": ""
+		"green": {
+			"text": "Green"
 		}, 
-		"yellow-green": {
-			"text": "Yellow-Green",
-			"color": ""
+		"lime-green": {
+			"text": "Lime-Green"
 		},
 		"yellow": {
-			"text": "Yellow",
-			"color": ""
+			"text": "Yellow"
 		},
-		"yellow-orange": {
-			"text": "Yellow-Orange",
-			"color": ""
+		"orange": {
+			"text": "Orange"
 		},
-		"Orange": {
-			"text": "Orange",
-			"color": ""
+		"pink": {
+			"text": "Pink"
 		},
-		"Red-Orange": {
-			"text": "Red-Orange",
-			"color": ""
-		}, 
-		"Red": {
-			"text": "Red",
-			"color": ""
+		"red": {
+			"text": "Red"
 		},
-		"Red-Violet": {
-			"text": "Red-Violet",
-			"color": ""
+		"fuschia": {
+			"text": "Fuschia"
 		},
-		"Violet": {
-			"text": "Violet",
-			"color": ""
-		},
-		"Blue-Violet": {
-			"text": "Blue-Violet",
-			"color": ""
+		"purple": {
+			"text": "Purple"
 		}
 	},
 	display: function(){
 		// function takes one of the resume sections as the title parameter
 		for (var i in SVG.circle){
 			var svg = SVG.circle[i];
+			console.log(svg.text);
 			// set caption to the appropriate property of SVG class 
 			// insert appropriate SVG properties into the HTML helper
 			var SVGstring = SVGcircleHelper + SVGtext;
-			SVGstring = SVGstring.replace("%class%", svg["text"]).replace("%color%", svg["color"]).replace("%id%", svg["id"]).replace("%text_x%", svg["text_x"]).replace("%text_y%", svg["text_y"]).replace("%text%", svg["text"]).replace ("class", svg["id"]);
+			SVGstring = SVGstring.replace("%id%", svg.text).replace("%text%", svg["text"]);
 			SVGstring += SVGend;
 			$(".main ul").append(SVGstring);
 		}
@@ -82,6 +59,12 @@ var SVG = {
 		});
 	}
 };
+
+var SVGcircleHelper = "<li class='circle'><svg id='%id%' width='150' height='150'><circle cx='75' cy='75' r='75'/>";
+var SVGtext = "<text text-anchor='middle' alignment-baseline='middle' width='150' height='75' x='50%' y='50%'>%text%</text>";
+
+var SVGend = "</svg></li>";
+
 
 SVG.display();
 SVG.click();
